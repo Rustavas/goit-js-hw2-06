@@ -12,3 +12,10 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+// const fragment = document.createDocumentFragment();
+
+const markup = `<li>${images.map(image => {
+
+  `<img ${image}>`)</li>`;
+  
+})
