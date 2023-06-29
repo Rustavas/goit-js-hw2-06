@@ -12,10 +12,13 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-// const fragment = document.createDocumentFragment();
 
-const markup = `<li>${images.map(image => {
+const imgListEl = document.querySelector('.gallery');
+const imgElArr = images.map(({url, alt}) => 
+  `<li><img src=${url} alt=${alt} width='400'/></li>`).join("");
 
-  `<img ${image}>`)</li>`;
-  
-})
+
+imgListEl.insertAdjacentHTML("beforeend", imgElArr);
+imgListEl.style.display = 'flex';
+imgListEl.style.gap = '20px';
+imgListEl.style.listStyle = 'none';
